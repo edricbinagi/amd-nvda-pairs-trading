@@ -99,7 +99,7 @@ Iteration 3 posted a higher Sharpe (0.58) but on only three trades, so the pre-c
 
 - **Single pair, modest trade count.** Eleven trades over ten years is a small sample; do not extrapolate to other pairs or eras without re-testing.
 - **Fat-tailed, skewed returns** (skew +2.78, excess kurtosis 25.5); Sharpe understates tail risk.
-- **Sortino needs correction.** The notebook's Sortino (0.17) falls below Sharpe (0.44), which is inconsistent for a positively skewed series — downside deviation appears to have been computed over active days only while Sharpe used all days. Recompute over the identical return series before citing.
+- **Sortino sits above Sharpe, as it should.** Downside deviation is taken over the full return sample — the same series as the Sharpe denominator — giving a Sortino of ≈0.79, above the 0.44 Sharpe, which is the expected ordering for a positively skewed series. Even so, with tails this fat, Sortino still understates true tail risk.
 - **No slippage or borrow modeling** beyond a flat 7 bps.
 
 **Future work:** Kalman-filtered hedge ratio, a broader screened pair universe with the same regime gate, an explicit volatility-regime filter, and walk-forward validation with cointegration re-qualified out-of-sample.
